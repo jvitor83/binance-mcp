@@ -2,30 +2,32 @@
 
 ## Overview
 
-Binance MCP Server is a backend service designed to interact with the Binance exchange API and execute transactions on the Binance Smart Chain (BSC). It facilitates seamless integration with both the Binance trading platform and blockchain functionality, including placing orders on the exchange, retrieving account information, sending native BNB transfers, and handling BEP-20 token transactions. The server utilizes the Model Context Protocol (MCP) framework to ensure secure, structured, and efficient operations.
+Binance MCP Server is a backend service designed to interact with the Binance API. It facilitates seamless interaction with the Binance exchange, enabling users to view their portfolio, convert tokens, and execute trades with minimal market impact. The server utilizes the Model Context Protocol (MCP) framework to ensure secure, structured, and efficient transactions.
 
 ### Key Functionalities:
 
 - Interact with Binance exchange API for account information and trading
-- Execute blockchain transactions on Binance Smart Chain (BSC) when needed
-- Place market orders and implement algorithmic trading strategies
-- Send native BNB transfers and BEP-20 token transactions
+- Display portfolio composition and valuation
+- Execute smart token conversions with market impact mitigation
+- Process market orders and algorithmic trading strategies
 - Retrieve real-time trading data and account information
-- Implement structured operations using the Model Context Protocol framework
+- Implement structured transactions using the Model Context Protocol framework
 - Provide secure authentication and API key management for Binance integration
 
 ## Features
 
-- **Binance API Integration**: Connect to Binance exchange for account information and trading operations
-- **Binance Smart Chain Compatibility**: Support for BSC network transactions and token interactions when required
-- **Account Management**: Retrieve detailed account information, balances, and trading history
-- **Market Data Access**: Access real-time order books and market data for informed trading decisions
-- **Order Execution**: Place spot market orders with flexible quantity specifications
-- **Algorithmic Trading Support**: Implement Time-Weighted Average Price (TWAP) orders to minimize market impact
-- **Automated Trading**: Execute trades programmatically based on predefined strategies
-- **Secure Authentication**: Manage API keys and secure connections to Binance services
-- **Comprehensive Error Handling**: Detailed error reporting for transaction failures and API issues
-- **MCP Framework Compliance**: Standardized approach for structured application interactions
+- [x] **Binance API Integration**: Connect to Binance exchange for account information and trading operations
+- [x] **Portfolio Management**: View detailed portfolio composition, market value, and percentage allocation
+- [x] **Portfolio Analytics**: Optional historical value tracking to monitor performance over time
+- [x] **Smart Token Conversion**: Convert between tokens with intelligent order execution strategies
+- [x] **Market Impact Mitigation**: Automatically use algorithmic trading for larger orders to prevent price slippage
+- [x] **Account Management**: Retrieve detailed account information, balances, and trading history
+- [x] **Market Data Access**: Access real-time order books and market data for informed trading decisions
+- [x] **Order Execution**: Place spot market orders with flexible quantity specifications
+- [ ] **Algorithmic Trading Support**: Implement Time-Weighted Average Price (TWAP) orders to minimize market impact
+- [ ] **Automated Trading**: Execute trades programmatically based on predefined strategies
+- [ ] **Secure Authentication**: Manage API keys and secure connections to Binance services
+- [ ] **Comprehensive Error Handling**: Detailed error reporting for transaction failures and API issues
 
 ## Requirements
 
