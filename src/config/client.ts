@@ -8,8 +8,8 @@ const BASE_URL = 'https://api.binance.com';
 export const spotClient = new Spot(API_KEY, API_SECRET, { baseURL: BASE_URL });
 export const algoClient = new Algo({
     configurationRestAPI: {
-        apiKey: process.env.API_KEY ?? '',
-        apiSecret: process.env.API_SECRET ?? '',
+        apiKey: API_KEY ?? '',
+        apiSecret: API_SECRET ?? '',
         basePath: BASE_URL,
     }
 });
