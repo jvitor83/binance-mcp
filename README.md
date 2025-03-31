@@ -1,23 +1,23 @@
-# BNB Chain MCP Server
+# Binance MCP Server
 
 ## Overview
 
-BNB Chain MCP Server is a backend service designed to execute transactions on the Binance Smart Chain (BSC) and interact with the Binance API. It facilitates seamless interaction with both the blockchain and Binance exchange, including sending native BNB and BEP-20 token transfers, as well as placing orders and retrieving account information from Binance. The server utilizes the Model Context Protocol (MCP) framework to ensure secure, structured, and efficient transactions.
+Binance MCP Server is a backend service designed to interact with the Binance exchange API and execute transactions on the Binance Smart Chain (BSC). It facilitates seamless integration with both the Binance trading platform and blockchain functionality, including placing orders on the exchange, retrieving account information, sending native BNB transfers, and handling BEP-20 token transactions. The server utilizes the Model Context Protocol (MCP) framework to ensure secure, structured, and efficient operations.
 
 ### Key Functionalities:
 
-- Execute blockchain transactions on Binance Smart Chain (BSC)
 - Interact with Binance exchange API for account information and trading
+- Execute blockchain transactions on Binance Smart Chain (BSC) when needed
+- Place market orders and implement algorithmic trading strategies
 - Send native BNB transfers and BEP-20 token transactions
-- Process market orders and algorithmic trading strategies
 - Retrieve real-time trading data and account information
-- Implement structured transactions using the Model Context Protocol framework
+- Implement structured operations using the Model Context Protocol framework
 - Provide secure authentication and API key management for Binance integration
 
 ## Features
 
-- **Binance Smart Chain Integration**: Connect to BSC network for blockchain transactions and token interactions
 - **Binance API Integration**: Connect to Binance exchange for account information and trading operations
+- **Binance Smart Chain Compatibility**: Support for BSC network transactions and token interactions when required
 - **Account Management**: Retrieve detailed account information, balances, and trading history
 - **Market Data Access**: Access real-time order books and market data for informed trading decisions
 - **Order Execution**: Place spot market orders with flexible quantity specifications
@@ -29,20 +29,20 @@ BNB Chain MCP Server is a backend service designed to execute transactions on th
 
 ## Requirements
 
-Before setting up the BNB Chain MCP Server, ensure you have the following installed:
+Before setting up the Binance MCP Server, ensure you have the following installed:
 
 - Node.js (v16 or later)
 - npm or yarn
-- A valid Binance Smart Chain (BSC) wallet private key
 - Binance API key and secret (for Binance exchange integration)
+- A valid Binance Smart Chain (BSC) wallet private key (for blockchain transactions)
 
 ## Installation
 
 Clone the repository and install dependencies:
 
 ```sh
-git clone https://github.com/your-repo/bsc-mcp-server.git
-cd bsc-mcp-server
+git clone https://github.com/your-repo/binance-mcp-server.git
+cd binance-mcp-server
 npm install  # or yarn install
 ```
 
@@ -114,7 +114,7 @@ Add the following configuration:
 ```json
 {
     "mcpServers": {
-        "bsc-mcp": {
+        "binance-mcp": {
             "command": "node",
             "args": [
                 "/Users/Username/Desktop/binance-mcp/build/index.js"
@@ -130,7 +130,7 @@ Add the following configuration:
 }
 ```
 
-Make sure to pass the correct location of the `index.js` file in the `command` and `args` fields.
+Make sure to pass the correct location of the `index.js` file in the `args` field.
 
 Restart Claude Desktop for the changes to take effect.
 
@@ -213,4 +213,4 @@ When a transaction fails, the server returns an error message with details. Chec
 
 This project is open-source under the MIT License.
 
-For contributions, bug reports, or feature requests, submit an issue on [GitHub](https://github.com/your-repo/bsc-mcp-server).
+For contributions, bug reports, or feature requests, submit an issue on [GitHub](https://github.com/your-repo/binance-mcp-server).
