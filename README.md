@@ -1,0 +1,2 @@
+# binance-mcp
+binance-mcp
