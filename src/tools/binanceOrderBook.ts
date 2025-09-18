@@ -1,6 +1,6 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { spotClient } from "../config/client.js";
+import { spotClient } from "../config/binanceClient.js";
 
 export function registerBinanceOrderBook(server: McpServer) {
   server.tool(
@@ -12,13 +12,17 @@ export function registerBinanceOrderBook(server: McpServer) {
     async ({ symbol }) => {
       try {
 
-        const orderBook = await spotClient.orderBook(symbol, {limit: 50});
+        const response = await spotClient.restAPI.depth({
+          symbol: symbol,
+          limit: 50
+        });
+        const orderBook = await response.data();
 
         return {
           content: [
             {
               type: "text",
-              text: `Get binance order book successfully. data: ${JSON.stringify(orderBook)}}`,
+              text: `Get binance order book successfully. data: ${JSON.stringify(orderBook)}`,
             },
           ],
         };

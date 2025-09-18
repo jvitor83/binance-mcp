@@ -1,7 +1,6 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { algoClient, spotClient } from "../config/client.js";
-import { OrderType, Side } from "@binance/connector-typescript";
+import { spotClient } from "../config/binanceClient.js";
 
 export function registerBinanceSpotPlaceOrder(server: McpServer) {
   server.tool(
@@ -18,19 +17,26 @@ export function registerBinanceSpotPlaceOrder(server: McpServer) {
     },
     async ({ symbol, side, quantity, quoteOrderQty }) => {
       try {
+        // Build parameters for the REST API call
+        const params: any = {
+          symbol,
+          side,
+          type: "MARKET"
+        };
+        
+        // Add quantity or quoteOrderQty based on what's provided
+        if (quantity !== undefined) params.quantity = quantity;
+        if (quoteOrderQty !== undefined) params.quoteOrderQty = quoteOrderQty;
 
-
-        const result = await spotClient.newOrder(symbol, side as Side, OrderType.MARKET, {
-            quantity,
-            quoteOrderQty,
-        })
+        const response = await spotClient.restAPI.newOrder(params);
+        const result = await response.data();
 
 
         return {
           content: [
             {
               type: "text",
-              text: `Place a new spot TWAP order with Algo service successfully. result: ${JSON.stringify(result)}}`,
+              text: `Place a new spot market order successfully. result: ${JSON.stringify(result)}`,
             },
           ],
         };
